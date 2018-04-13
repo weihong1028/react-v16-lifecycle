@@ -1,0 +1,52 @@
+.App {
+  margin: 0 50px;
+}
+
+.App-btns {
+  margin: 30px auto;
+}
+
+.App-btns button {
+  width: 250px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-lifecycle {
+  height: 125px;
+}
+
+.App-lifecycle-log {
+  padding: 16px;
+  height: 500px;
+  border: 1px solid #dedede;
+  overflow: auto;
+}
+
+.App-header {
+  padding: 20px;
+  color: black;
+}
+
+.App-title {
+  display: inline-block;
+  width: calc(100% - 150px);
+  vertical-align: 18px;
+}
+
+.App-main-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
