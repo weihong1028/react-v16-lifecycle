@@ -21,6 +21,7 @@ class App extends Component {
         <h1>React v16 lifecycle debug</h1>
         <div className="App-btns">
           <button onClick={() => {
+            console.cycleLog(`------------------- ${mountStatus ? 'Unmount' : 'Mount'}`);
             this.setState({
               mountStatus: !mountStatus,
               lifeCycleIncrementNum: lifeCycleIncrementNum + ( mountStatus ? 0 : 1 ),
@@ -30,11 +31,13 @@ class App extends Component {
             {mountStatus ? 'Unmount' : 'Mount'} {unsafeMode ? 'UnSafe' : ''}LifeCycleComponent
           </button>
           <button onClick={() => {
+            console.cycleLog(`------------------- New Props`);
             this.setState({ updateIncrementNum: updateIncrementNum + 1 });
           }} style={{ margin: '0 20px' }} disabled={!mountStatus}>
             Update {unsafeMode ? 'UnSafe' : ''}LifeCycleComponent
           </button>
           <button onClick={() => {
+            console.cycleLog(`------------------- Switch to ${unsafeMode ? '' : 'UnSafe'}LifeCycleComponent`);
             this.setState({ unsafeMode: !unsafeMode, lifeCycleIncrementNum: 0 });
           }} disabled={mountStatus}>
             Switch to {unsafeMode ? '' : 'UnSafe'}LifeCycleComponent

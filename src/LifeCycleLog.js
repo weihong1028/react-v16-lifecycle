@@ -16,11 +16,10 @@ class LifeCycleLog extends Component {
   }
 
   render() {
-    const { lifeCycleLog } = this.state;
     return (
       <div>
         <div style={{ marginBottom: '6px' }}>
-          <button hidden={!lifeCycleLog.length} style={{ marginRight: '6px' }} onClick={() => {
+          <button style={{ marginRight: '6px' }} onClick={() => {
             this.setState({ lifeCycleLog: [] });
           }}>clear</button>
           {`log format：[{ComponentName}-{ComponentIncrementNum}-{updateIncrementNum}] {info}`}

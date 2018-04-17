@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LifeCycleChildComponent from './LifeCycleChild';
-import logo from './logo.svg';
+import logo from './logo.unsafe.svg';
 import './App.css';
 
 class LifeCycleUnSafe extends Component {
@@ -47,7 +47,14 @@ class LifeCycleUnSafe extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <div className="App-title">
-            <button onClick={() => { this.setState({ testStatus: !testStatus }); }}>setState</button>
+            <button onClick={() => {
+              console.cycleLog(`------------------- setState()`);
+              this.setState({ testStatus: !testStatus });
+            }}>setState</button>
+            <button style={{ marginLeft: '12px' }} onClick={() => {
+              console.cycleLog(`------------------- forceUpdate()`);
+              this.forceUpdate();
+            }}>forceUpdate</button>
             <div className="App-main-title">UnSafeUnSafeLifeCycle-{incrementNum}-{updateIncrementNum}</div>
             <LifeCycleChildComponent updateIncrementNum={updateIncrementNum} />
           </div>

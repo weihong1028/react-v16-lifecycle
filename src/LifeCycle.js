@@ -45,9 +45,16 @@ class LifeCycle extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <div className="App-title">
+            <button onClick={() => {
+              console.cycleLog(`------------------- setState()`);
+              this.setState({ testStatus: !testStatus });
+            }}>setState</button>
+            <button style={{ marginLeft: '12px' }} onClick={() => {
+              console.cycleLog(`------------------- forceUpdate()`);
+              this.forceUpdate();
+            }}>forceUpdate</button>
             <div className="App-main-title">
               LifeCycle-{incrementNum}-{updateIncrementNum}
-              <button style={{ marginLeft: '12px' }} onClick={() => { this.setState({ testStatus: !testStatus }); }}>setState</button>
             </div>
             <LifeCycleChildComponent updateIncrementNum={updateIncrementNum} />
           </div>
